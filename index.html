@@ -8,30 +8,29 @@
   <style>
     body {
       margin: 0;
-      padding: 40px 20px; /* add some top and side padding */
+      padding: 10px 15px; 
       background: linear-gradient(135deg, #ffc0cb, #ffdde1);
       font-family: 'Poppins', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start; /* start from top for scroll */
-      position: relative;
-      min-height: 200vh;
+      min-height: 100vh;
     }
 
     .top-heading {
+      margin-top: 10px;
       font-family: 'Dancing Script', cursive;
-      font-size: 2.8em;
+      font-size: 2.5em;
       color: #d81b60;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-      margin-bottom: 40px;
       user-select: none;
+      text-align: center;
     }
 
     .envelope {
       position: relative;
-      width: 300px;
-      height: 320px;
+      width: 250px;
+      height: 260px;
       background: #fff;
       border: 2px solid #e91e63;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -39,12 +38,12 @@
       transition: transform 0.5s ease;
       z-index: 10;
       overflow: hidden;
+      border-radius: 15px;
+      margin: 20px 0;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      border-radius: 15px;
-      margin-bottom: 25px; /* spacing below envelope */
     }
 
     .envelope::before {
@@ -52,20 +51,19 @@
       position: absolute;
       bottom: 100%;
       left: 0;
-      border-width: 0 150px 100px 150px;
+      border-width: 0 125px 80px 125px;
       border-style: solid;
       border-color: transparent transparent #fff transparent;
       border-radius: 0 0 15px 15px;
     }
 
     .envelope.opened {
-      transform: translateY(-180%);
+      transform: translateY(-160%);
     }
 
     .envelope img.sticker {
-      width: 200px;
-      height: auto;
-      max-height: 140px;
+      width: 170px;
+      max-height: 120px;
       object-fit: contain;
       border-radius: 10px;
     }
@@ -77,22 +75,16 @@
       color: #c2185b;
       animation: blink 1s infinite;
       user-select: none;
+      text-align: center;
     }
 
     @keyframes blink {
-      0%, 100% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0.4;
-      }
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
     }
 
     .message {
-      position: relative; /* changed from absolute */
-      top: auto;
-      left: auto;
-      transform: none !important;
+      position: relative;
       width: 90%;
       max-width: 500px;
       text-align: center;
@@ -101,12 +93,10 @@
       border-radius: 15px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       transition: opacity 0.6s ease, max-height 0.6s ease;
-      z-index: 5;
       margin-top: 20px;
       font-size: 1.2em;
       color: #333;
       font-weight: 500;
-      user-select: text;
       font-family: 'Poppins', sans-serif;
       line-height: 1.5;
       opacity: 0;
@@ -116,23 +106,16 @@
 
     .message.show {
       opacity: 1;
-      max-height: 2000px; /* large enough to reveal content */
+      max-height: 2000px;
     }
 
     .message h1 {
       font-family: 'Dancing Script', cursive;
-      font-size: 2.8em;
+      font-size: 2.5em;
       color: #d81b60;
       margin: 0 0 15px;
       user-select: none;
     }
-
-    .message p {
-      font-size: 1.2em;
-      color: #333;
-      margin-bottom: 10px;
-    max-height: auto;
-  }
 
     .heart {
       position: absolute;
@@ -170,9 +153,7 @@
         transform: translateY(100vh) rotate(-45deg);
         opacity: 0;
       }
-      50% {
-        opacity: 1;
-      }
+      50% { opacity: 1; }
       100% {
         transform: translateY(-10vh) rotate(-45deg);
         opacity: 0;
@@ -199,6 +180,26 @@
       height: 200px;
       object-fit: contain;
     }
+
+    @media (max-width: 400px) {
+      .envelope {
+        width: 220px;
+        height: 230px;
+      }
+      .envelope::before {
+        border-width: 0 110px 70px 110px;
+      }
+      .envelope img.sticker {
+        width: 150px;
+      }
+      .top-heading {
+        font-size: 2em;
+      }
+      .message {
+        font-size: 1em;
+        padding: 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -208,7 +209,7 @@
     <img
       class="sticker"
       src="img.jpg"
-      alt="Birthday Boy Image"
+      alt="Birthday Image"
       draggable="false"
     />
     <div class="click-text">Click Here 🎈</div>
@@ -216,33 +217,20 @@
 
   <div class="message" id="message" aria-live="polite" aria-atomic="true">
     <h1>Happy Birthday AKKA ❤️🎂</h1>
-Wishing you all the happiness, love, and success. May your day be filled with smiles and warm hugs! 😊 Iniki unga birthday unga kuda enala iruka mudila, but I had all thinks about only U. miss u more and I wish you more happiness in your face this year... I wanna pray to God 🙏✨</br></br>
-<p>Akka ungaluku epdi nu therla ennala mudila ka... Naa ithana days ungata pesama vena irrundhurukalam. But ungala nenaikama irrundhadhu illa😔.
- 
-
-Romba oru marri irruku ka... Neenga gift vena nu sonna udaney... Adhuku reason unga parents ah soldreenga... Adha vittuten.
-
-
- And then  enaku en hpy ah vida en akka hpy tha mukkiyam... Adhu na andha gift send pandra nala spoil ahum na adhu vena... 🤕. Adhu unga memory ah enkittavey irrukattum.
- 
-
-But enna nu therla ka. Anniki nee unga v2la prob vandha neenga tha face pannanum nu sonnadhuku naa react panni2 vanten, But ennala inga normal ah irruka mudila.Enaku oru marri irrundhuchu avolothaalaa namma apdinu... 
-
-
-Enaku oru doubt ka... oru vela  naa tha ungala disturb pandren oh nuu... Bcs aniki naa react panni2 vandha aprm ipo varaikum neenga oru chinna txt kuda pannala. So virupam illa nu thana meaning. 
-
-
-No prob ka...  Naa unga lyf la illama irrundha tha neenga hpy naa adhuku kuda naa ready tha kaa... 🤕
-Neenga hpy ah irrundha podhum.</br>
-
-Anyways iniki unga b'daykl.so iniki neenga hpy ah irrukanumk,Njoy ur dayy & neenga eppavum neenga hpy ah irrukanum kaa... Tata byee.</br>
-
-
-Piriya manam illamal...
-piriya vendiya soolzhalil...  </br>     
-
-                                          Naan🙂
-        
+    Wishing you all the happiness, love, and success. May your day be filled with smiles and warm hugs! 😊 Iniki unga birthday unga kuda enala iruka mudila, but I had all thinks about only U. miss u more and I wish you more happiness in your face this year... I wanna pray to God 🙏✨
+    <br><br>
+    <p>
+      Akka ungaluku epdi nu therla ennala mudila ka... Naa ithana days ungata pesama vena irrundhurukalam. But ungala nenaikama irrundhadhu illa😔.<br><br>
+      Romba oru marri irruku ka... Neenga gift vena nu sonna udaney... Adhuku reason unga parents ah soldreenga... Adha vittuten.<br><br>
+      And then enaku en hpy ah vida en akka hpy tha mukkiyam... Adhu na andha gift send pandra nala spoil ahum na adhu vena... 🤕. Adhu unga memory ah enkittavey irrukattum.<br><br>
+      But enna nu therla ka. Anniki nee unga v2la prob vandha neenga tha face pannanum nu sonnadhuku naa react panni2 vanten, But ennala inga normal ah irruka mudila.Enaku oru marri irrundhuchu avolothaalaa namma apdinu...<br><br>
+      Enaku oru doubt ka... oru vela naa tha ungala disturb pandren oh nuu... Bcs aniki naa react panni2 vandha aprm ipo varaikum neenga oru chinna txt kuda pannala. So virupam illa nu thana meaning.<br><br>
+      No prob ka... Naa unga lyf la illama irrundha tha neenga hpy naa adhuku kuda naa ready tha kaa... 🤕<br>
+      Neenga hpy ah irrundha podhum.<br><br>
+      Anyways iniki unga b'daykl.so iniki neenga hpy ah irrukanumk,Njoy ur dayy & neenga eppavum neenga hpy ah irrukanum kaa... Tata byee.<br><br>
+      Piriya manam illamal...<br>
+      piriya vendiya soolzhalil...<br><br>
+      Naan🙂
     </p>
   </div>
 
@@ -284,7 +272,7 @@ piriya vendiya soolzhalil...  </br>
       }
     });
 
-    // Keyboard accessibility: open envelope with Enter or Space
+    // Keyboard accessibility
     envelope.addEventListener("keydown", (e) => {
       if ((e.key === "Enter" || e.key === " ") && !opened) {
         e.preventDefault();
